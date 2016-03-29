@@ -93,25 +93,25 @@ $(function() {
       numbers.push(i);
     }
 
-    for (var k = 0; k < numbers.length && numbers[k] <= Math.sqrt(max); k++) {
-      //console.log(numbers);
-      for (var j = 0; j < numbers.length; j++) {
-        //console.log(numbers[k] + " " + numbers[j]);
-          if (numbers[j]%numbers[k] === 0 && numbers[j] != numbers[k]) {
-            numbers.splice(j, 1);
-        }
-      }
-    }
-
-    // for (var k = 2; k < max; k++) {
-    //   console.log(numbers);
+    // for (var k = 0; k < numbers.length && numbers[k] <= Math.sqrt(max); k++) {
+    //   //console.log(numbers);
     //   for (var j = 0; j < numbers.length; j++) {
-    //     console.log(k + " " + numbers[j]);
-    //       if (numbers[j]%k === 0 && numbers[j] != k) {
+    //     //console.log(numbers[k] + " " + numbers[j]);
+    //       if (numbers[j]%numbers[k] === 0 && numbers[j] !== numbers[k]) {
     //         numbers.splice(j, 1);
     //     }
     //   }
     // }
+
+    for (var k = 2; k < max; k++) {
+      //console.log(numbers);
+      for (var j = 0; j < numbers.length; j++) {
+        //console.log(k + " " + numbers[j]);
+          if (numbers[j]%k === 0 && numbers[j] !== k) {
+            numbers.splice(j, 1);
+        }
+      }
+    }
 
       console.log(numbers);
 
